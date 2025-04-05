@@ -1,8 +1,15 @@
-import Card from "./components/Card";
+import Card, { CardBoody } from "./components/Card";
+import List from "./components/List";
+
 
 function App() {
-
-  return <Card body={"3"} />;
+  const list = ["Goku", "Tanjiro", "Eren"]
+  return (
+    <Card>
+      <CardBoody title= "hola mundo" text="este es el texto"></CardBoody>
+      <List data={list}></List>
+    </Card>
+  );
 
 }
 

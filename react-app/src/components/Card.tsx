@@ -1,28 +1,35 @@
+import { ReactNode } from "react";
+
 interface Props {
-    body: string
+    children: ReactNode
 }
 
 
 function Card(props: Props) {
-    const { body } = props;
+    const { children } = props;
 
     return (
       <div className="card" style={{width:"350px"}}>
         <div className="card-body">
-        {body}
+        {children}
         </div>
       </div>
     );
   }
   
-  function CardBoody(){
+  interface CardbodyProps {
+    title:string 
+    text?: string
+  }
+
+  export function CardBoody(props: CardbodyProps){
+    const { title, text } = props;
     return (
         <>
-        <h5 className="card-title">Card title</h5>
+        <h5 className="card-title">{title}</h5>
           <p className="card-text">
-            With supporting text below as a natural lead-in to additional content.
+            {text}
           </p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
         </>
     );
   }
